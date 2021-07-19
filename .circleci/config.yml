@@ -5,4 +5,4 @@ jobs:
       -image: circleci/noe.4.8.2
     steps:
     -chekout
-    -run: echo "A first hello"
+    -run: echo "Is this working"
