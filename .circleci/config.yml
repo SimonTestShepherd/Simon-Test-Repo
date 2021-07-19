@@ -1,0 +1,8 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      -image: circleci/noe.4.8.2
+    steps:
+    -chekout
+    -run: echo "A first hello"
