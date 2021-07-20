@@ -7,6 +7,6 @@ jobs:
       - checkout
       - run: npm install
       - save_cache:
-          Key: npm-cache-{{ .Branch }}-{{ checksum "package.json" }}
+          Key: npm-cache-{{ .Master }}-{{ checksum "package.json" }}
           paths:
             -node_modules
