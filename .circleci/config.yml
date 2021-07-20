@@ -5,4 +5,4 @@ jobs:
       -image: cimg/base:2021.04
     steps:
       - chekout
-      -run: echo "Is this working"
+      -run: echo "A first hello"
