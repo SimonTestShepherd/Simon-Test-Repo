@@ -18,7 +18,7 @@ jobs:
       - image: cimg/base:2021.04
     steps:
       - checkout
-      - run: echo "a more familiar hello"
+      - run: echo "a more familiar hi"
       - attatch_workspace:
         at: my_workspace
       - run: |
