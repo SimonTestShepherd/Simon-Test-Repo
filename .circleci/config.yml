@@ -5,8 +5,10 @@ jobs:
       - image: cimg/base:2021.04
     steps:
       - checkout
+      - restore_cache:
+          Key: npm-cache-{{ .Branch }}-{{ checksum "package.json" }}
       - run: npm install
       - save_cache:
-          Key: npm-cache-{{ .Master }}-{{ checksum "package.json" }}
+          Key: npm-cache-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
             -node_modules
