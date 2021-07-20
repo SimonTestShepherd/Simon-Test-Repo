@@ -6,10 +6,3 @@ jobs:
     steps:
     -chekout
     -run: echo "Is this working"
-    jobs:
-  build:
-    docker:
-      -image: circleci/noe.4.8.2
-    steps:
-    -chekout
-    -run: echo "Is this working"
