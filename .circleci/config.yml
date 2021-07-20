@@ -6,16 +6,32 @@ jobs:
     steps:
       - checkout
       - run: echo " A first hello"
+      - run: mkdir -p my_workspace
+      - run: "Trying out workspaces" > my_workspace/echo-output
+      - persist_to_workspace:
+        root: my_workspace
+        paths:
+          - echo-output
+
   two:
     docker:
       - image: cimg/base:2021.04
     steps:
       - checkout
       - run: echo "a more familiar hello"
+      - attatch_workspace:
+        at: my_workspace
+      - run: |
+          if [[ $(cat my_workspace/echo-output) == "Trying out workspaces" ]]; then
+        else
+          echo "Nope!"; exit 1
+          if
 
 workflows:
   version: 2
   one_and_two:
     jobs:
     - one
-    - two
+    - two:
+        requires:
+         - one
