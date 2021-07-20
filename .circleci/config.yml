@@ -18,4 +18,6 @@ workflows:
   first_and_second:
     jobs:
       - first
-      - second
+      - second:
+          requires:
+            - first
