@@ -17,5 +17,5 @@ workflows:
   version: 2
   first_and_second:
     jobs:
-      - one
-      - two 
+      - first
+      - second
