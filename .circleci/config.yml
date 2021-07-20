@@ -25,13 +25,13 @@ jobs:
           if [[ $(cat my_workspace/echo-output) == "Trying out workspaces" ]]; then
         else
           echo "Nope!"; exit 1
-          if
+          fi
 
-workflows:
-  version: 2
-  one_and_two:
-    jobs:
-    - one
-    - two:
+  workflows:
+    version: 2
+    one_and_two:
+     jobs:
+      - one
+      - two:
         requires:
-           - one
+          - one
