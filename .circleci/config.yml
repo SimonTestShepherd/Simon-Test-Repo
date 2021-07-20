@@ -9,23 +9,22 @@ jobs:
       - run: mkdir -p my_workspace
       - run: echo "Trying out workspaces" > my_workspace/echo-output
       - persist_to_workspace:
-        root: my_workspace
-        paths:
-          - echo-output
-
+          root: my_workspace
+          paths:
+            - echo-output
   two:
     docker:
       - image: cimg/base:2021.04
     steps:
       - checkout
-      - run: echo "a more familiar hi"
+      - run: echo "a more familiar hello"
       - attatch_workspace:
           at: my_workspace
       - run: |
           if [[ $(cat my_workspace/echo-output) == "Trying out workspaces" ]]; then
             echo "It worked!";
           else
-            echo "It did not work!"; exit 1
+            echo "Nope!"; exit 1
           fi
 
 workflows:
