@@ -24,13 +24,13 @@ jobs:
       - run: |
         if [[ $(cat my_workspace/echo-output) == "Trying out workspaces" ]]; then
           echo "It worked!";
-            else
+        else
           echo "Nope!"; exit 1
-          fi
+        fi
 
 workflows:
-   version: 2
-   one_and_two:
+  version: 2
+  one_and_two:
     jobs:
       - one
       - two:
